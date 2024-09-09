@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:student_tawsel_app/homescreen.dart';
+
+import 'package:student_tawsel_app/tabletime.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xffF6F6F6)),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const Tabletime(),
     );
   }
 }

@@ -36,63 +36,49 @@ class ChatScreen extends StatelessWidget {
 
   Widget buildChatItem(
       String avatarPath, String name, String profession, String date) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 16.0),
-      padding: const EdgeInsets.all(16.0),
-      decoration: BoxDecoration(
-        color: const Color(0XFFF6F6F6),
-        borderRadius: BorderRadius.circular(16.0),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.grey,
-            blurRadius: 20,
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Column(
-            children: [
-              CircleAvatar(
-                radius: 40,
-                backgroundColor: Colors.grey[300],
-                backgroundImage: AssetImage(avatarPath),
+    return Row(
+      children: [
+        Column(
+          children: [
+            CircleAvatar(
+              radius: 40,
+              backgroundColor: Colors.grey[300],
+              backgroundImage: AssetImage(avatarPath),
+            ),
+            const SizedBox(height: 8.0),
+            Text(
+              name,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
               ),
-              const SizedBox(height: 8.0),
+            ),
+          ],
+        ),
+        const SizedBox(width: 16.0),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
               Text(
-                name,
+                profession,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
+                  fontSize: 16.0,
+                ),
+              ),
+              const SizedBox(height: 40.0),
+              Text(
+                date,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
-          const SizedBox(width: 16.0),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  profession,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
-                  ),
-                ),
-                const SizedBox(height: 40.0),
-                Text(
-                  date,
-                  style: const TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

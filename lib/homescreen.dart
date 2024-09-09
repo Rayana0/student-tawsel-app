@@ -5,6 +5,7 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -12,8 +13,6 @@ class HomePage extends StatelessWidget {
             borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(22),
           bottomRight: Radius.circular(22),
-          topLeft: Radius.circular(0),
-          topRight: Radius.circular(0),
         )),
         backgroundColor: const Color(0xff182243),
         toolbarHeight: 139,
@@ -25,14 +24,11 @@ class HomePage extends StatelessWidget {
               backgroundColor: Colors.grey[300],
               backgroundImage: const AssetImage("assets/boy.png"),
             ),
-            const SizedBox(
-              width: 15,
-            ),
+            const SizedBox(width: 15),
             const Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Mohammed",
                   style: TextStyle(
                       color: Colors.white,
@@ -67,9 +63,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(child: Image.asset("assets/Rect.png")),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             const Text(
               "Latest Notices",
               style: TextStyle(
@@ -77,96 +71,87 @@ class HomePage extends StatelessWidget {
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 380,
+            const SizedBox(height: 10),
+            // ListView.builder wrapped inside Expanded
+            Expanded(
               child: ListView.builder(
-                  itemCount: 4,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 91,
-                      width: 353,
-                      child: Card(
-                        child: ListTile(
-                          title: const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                " MR :  Adel",
-                                style: TextStyle(
-                                    fontFamily: "Poppins",
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                    color: Colors.black),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                " Science Teacher",
-                                style: TextStyle(
-                                    fontFamily: "Poppins",
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    color: Colors.black),
-                              ),
-                              Text(
-                                "Ahmed",
-                                style: TextStyle(
-                                    fontFamily: "Poppins",
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    color: Colors.black),
-                              ),
-                            ],
+                itemCount: 4,
+                itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                    child: ListTile(
+                      title: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            " MR :  Adel",
+                            style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.black),
                           ),
-                          trailing: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return ChatScreen();
-                                  }));
-                                },
-                                child: const Text(
-                                  " Message",
-                                  style: TextStyle(
-                                      fontFamily: "Poppins",
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12,
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                " Management Education Serves ",
-                                style: TextStyle(
-                                    fontFamily: "Poppins",
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 8,
-                                    color: Colors.black),
-                              ),
-                              const Text(
-                                " And Buses At Your Home",
-                                style: TextStyle(
-                                    fontFamily: "Poppins",
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 8,
-                                    color: Colors.black),
-                              ),
-                            ],
+                          SizedBox(height: 10),
+                          Text(
+                            " Science Teacher",
+                            style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12,
+                                color: Colors.black),
                           ),
-                        ),
+                          Text(
+                            "Ahmed",
+                            style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12,
+                                color: Colors.black),
+                          ),
+                        ],
                       ),
-                    );
-                  }),
+                      trailing: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return const ChatScreen();
+                              }));
+                            },
+                            child: const Text(
+                              " Message",
+                              style: TextStyle(
+                                  fontFamily: "Poppins",
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 12,
+                                  color: Colors.black,
+                                  decoration: TextDecoration.underline),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          const Text(
+                            " Management Education Serves ",
+                            style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontWeight: FontWeight.w500,
+                                fontSize: 8,
+                                color: Colors.black),
+                          ),
+                          const Text(
+                            " And Buses At Your Home",
+                            style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontWeight: FontWeight.w500,
+                                fontSize: 8,
+                                color: Colors.black),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),
