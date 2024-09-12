@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:student_tawsel_app/listassignment.dart';
 
 class Assignment extends StatelessWidget {
-  const Assignment({super.key});
+  Assignment({super.key});
+
+  final List assignmment = [
+    {"name": "Assignment 1", "details": "Basic Of Science Ch 1.pdf"},
+    {"name": "Assignment 2", "details": "Intro of  Chapter 2.pdf"},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,7 @@ class Assignment extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(25.0),
-            child: Container(
+            child: SizedBox(
               width: 350,
               height: 56,
               //color: Colors.white,

@@ -1,8 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:student_tawsel_app/tablelist.dart';
 
+// ignore: must_be_immutable
 class Tabletime extends StatelessWidget {
-  const Tabletime({super.key});
+  Tabletime({super.key});
+
+  final List tablelist = [
+    {
+      "name": "Science",
+      "details": "Basic Of Science Ch 1",
+      "class": "Class : 3",
+      "time": "9:00 AM",
+    },
+    {
+      "name": "Math",
+      "details": "Intro Of Math Ch 2",
+      "class": "Class : 3",
+      "time": "10:00 AM",
+    },
+  ];
+  List<String> daysofweek = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +53,7 @@ class Tabletime extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.baseline,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
+                SizedBox(
                   width: 350,
                   height: 60,
                   child: ListView.builder(
@@ -44,7 +68,7 @@ class Tabletime extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 8.0, vertical: 0.0),
                                 decoration: BoxDecoration(
-                                  color: Color(0xff182243),
+                                  color: const Color(0xff182243),
                                   borderRadius: BorderRadius.circular(10),
                                   border: Border.all(),
                                 ),

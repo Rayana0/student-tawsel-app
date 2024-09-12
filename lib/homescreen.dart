@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:student_tawsel_app/chatscreen.dart';
+import 'homelist.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -46,14 +46,14 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Icon(
-              Icons.settings,
-              size: 40,
-              color: Colors.white,
-            ),
+            padding: const EdgeInsets.all(14.0),
+            child: Image.asset("assets/icon _settings.png"
+
+                //size: 40,
+                //color: Colors.white,
+                ),
           )
         ],
       ),
@@ -75,33 +75,34 @@ class HomePage extends StatelessWidget {
             // ListView.builder wrapped inside Expanded
             Expanded(
               child: ListView.builder(
-                itemCount: 4,
-                itemBuilder: (BuildContext context, int index) {
+                scrollDirection: Axis.vertical,
+                itemCount: homelist.length,
+                itemBuilder: (context, index) {
                   return Card(
                     child: ListTile(
-                      title: const Column(
+                      title: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            " MR :  Adel",
-                            style: TextStyle(
+                            homelist[index]['name'],
+                            style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
                                 color: Colors.black),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Text(
-                            " Science Teacher",
-                            style: TextStyle(
+                            homelist[index]['subject teacher'],
+                            style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
                                 fontSize: 12,
                                 color: Colors.black),
                           ),
                           Text(
-                            "Ahmed",
-                            style: TextStyle(
+                            homelist[index]['subject name'],
+                            style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
                                 fontSize: 12,
@@ -119,9 +120,9 @@ class HomePage extends StatelessWidget {
                                 return const ChatScreen();
                               }));
                             },
-                            child: const Text(
-                              " Message",
-                              style: TextStyle(
+                            child: Text(
+                              homelist[index]["mss"],
+                              style: const TextStyle(
                                   fontFamily: "Poppins",
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12,
@@ -130,17 +131,17 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 10),
-                          const Text(
-                            " Management Education Serves ",
-                            style: TextStyle(
+                          Text(
+                            homelist[index]["man"],
+                            style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
                                 fontSize: 8,
                                 color: Colors.black),
                           ),
-                          const Text(
-                            " And Buses At Your Home",
-                            style: TextStyle(
+                          Text(
+                            homelist[index]["maan"],
+                            style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
                                 fontSize: 8,

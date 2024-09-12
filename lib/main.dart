@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:student_tawsel_app/addaddress.dart';
 
-import 'package:student_tawsel_app/tabletime.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xffF6F6F6)),
         useMaterial3: true,
       ),
-      home: const Tabletime(),
+      // ignore: prefer_const_constructors
+      home: Addaddress(),
     );
   }
 }
