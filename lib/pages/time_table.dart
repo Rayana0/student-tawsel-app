@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class Tabletime extends StatelessWidget {
-  Tabletime({super.key});
+class TimeTable extends StatelessWidget {
+  TimeTable({super.key});
 
   final List tablelist = [
     {
@@ -31,6 +31,7 @@ class Tabletime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -49,8 +50,7 @@ class Tabletime extends StatelessWidget {
         body: Column(
           children: [
             Row(
-              textBaseline: TextBaseline.alphabetic,
-              crossAxisAlignment: CrossAxisAlignment.baseline,
+              //$$$$$$$$$$$$$$$$$$$$$$$$$$$ SATART OF D A Y O F W E E K
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SizedBox(
@@ -97,6 +97,7 @@ class Tabletime extends StatelessWidget {
                 )
               ],
             ),
+            //$$$$$$$$$$$$$$$$$$$$$$$$$$$ END OF D A Y O F W E E K
             Expanded(
               child: ListView.builder(
                   itemCount: tablelist.length,
@@ -131,6 +132,7 @@ class Tabletime extends StatelessWidget {
                                     style: const TextStyle(
                                         color: Colors.black,
                                         fontSize: 20,
+                                        fontFamily: "Inter",
                                         fontWeight: FontWeight.w500),
                                   ),
                                   const SizedBox(
@@ -141,6 +143,7 @@ class Tabletime extends StatelessWidget {
                                     style: const TextStyle(
                                         color: Colors.black,
                                         fontSize: 20,
+                                        fontFamily: "Inter",
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ]),
@@ -151,6 +154,7 @@ class Tabletime extends StatelessWidget {
                                   tablelist[index]['class'],
                                   style: const TextStyle(
                                       fontSize: 16,
+                                      fontFamily: "Inter",
                                       fontWeight: FontWeight.bold),
                                 ),
                                 const SizedBox(
@@ -160,6 +164,7 @@ class Tabletime extends StatelessWidget {
                                   tablelist[index]['time'],
                                   style: const TextStyle(
                                       fontSize: 16,
+                                      fontFamily: "Inter",
                                       fontWeight: FontWeight.bold),
                                 ),
                               ],

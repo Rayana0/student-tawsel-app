@@ -1,13 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:student_tawsel_app/chatscreen.dart';
-import 'homelist.dart';
+import 'package:student_tawsel_app/pages/chat.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ViewAllNotices extends StatelessWidget {
+  ViewAllNotices({super.key});
+
+  final List noticeslist = [
+    {
+      "name": "MR :  Adel",
+      "subject teacher": "Science Teacher",
+      "subject name": "Ahmed",
+      "mss": "Message",
+      "man": "Management Education Serves ",
+      "maan": "And Buses At Your Home",
+    },
+    {
+      "name": "MR :  Jasem",
+      "subject teacher": "Math Teacher",
+      "subject name": "ALi",
+      "mss": "Message",
+      "man": "Management Education Serves ",
+      "maan": "And Buses At Your Home",
+    },
+    {
+      "name": "MR :  Adel",
+      "subject teacher": "Science Teacher",
+      "subject name": "Ahmed",
+      "mss": "Message",
+      "man": "Management Education Serves ",
+      "maan": "And Buses At Your Home",
+    },
+    {
+      "name": "MR :  Jasem",
+      "subject teacher": "Math Teacher",
+      "subject name": "Ali",
+      "mss": "Message",
+      "man": "Management Education Serves ",
+      "maan": "And Buses At Your Home",
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -76,7 +111,7 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 scrollDirection: Axis.vertical,
-                itemCount: homelist.length,
+                itemCount: noticeslist.length,
                 itemBuilder: (context, index) {
                   return Card(
                     child: ListTile(
@@ -84,7 +119,7 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            homelist[index]['name'],
+                            noticeslist[index]['name'],
                             style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
@@ -93,7 +128,7 @@ class HomePage extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            homelist[index]['subject teacher'],
+                            noticeslist[index]['subject teacher'],
                             style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
@@ -101,7 +136,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.black),
                           ),
                           Text(
-                            homelist[index]['subject name'],
+                            noticeslist[index]['subject name'],
                             style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
@@ -117,11 +152,11 @@ class HomePage extends StatelessWidget {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return const ChatScreen();
+                                return const Chat();
                               }));
                             },
                             child: Text(
-                              homelist[index]["mss"],
+                              noticeslist[index]["mss"],
                               style: const TextStyle(
                                   fontFamily: "Poppins",
                                   fontWeight: FontWeight.w500,
@@ -132,7 +167,7 @@ class HomePage extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            homelist[index]["man"],
+                            noticeslist[index]["man"],
                             style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
@@ -140,7 +175,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.black),
                           ),
                           Text(
-                            homelist[index]["maan"],
+                            noticeslist[index]["maan"],
                             style: const TextStyle(
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,

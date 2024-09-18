@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AddressPage extends StatelessWidget {
-  const AddressPage({super.key});
+class Addresses extends StatelessWidget {
+  const Addresses({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,23 +35,20 @@ class AddressPage extends StatelessWidget {
         itemBuilder: (context, index) {
           return Card(
             elevation: 2,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
             margin: const EdgeInsets.only(bottom: 16),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // زر Edit في جهة اليمين
+                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const SizedBox.shrink(), // يجعل الزر يبدأ من الجهة اليمنى
+                      const SizedBox.shrink(), 
                       TextButton(
                         onPressed: () {
-                          // Action to edit address
+                         
                         },
                         child: const Text(
                           "Edit",
@@ -63,9 +60,9 @@ class AddressPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 8), // مسافة بعد الزر
+                  const SizedBox(height: 8), 
 
-                  // النص الخاص بالعنوان
+                  
                   Text(
                     addresses[index]['address'],
                     style: const TextStyle(
@@ -74,15 +71,16 @@ class AddressPage extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  const SizedBox(height: 8), // مسافة سطر بعد العنوان
+                  const SizedBox(height: 8), 
 
-                  // Checkbox مع النص الخاص به
+                 
                   Row(
                     children: [
                       Checkbox(
+                        activeColor: Colors.black,
                         value: addresses[index]['isDefault'],
                         onChanged: (bool? value) {
-                          // Action when checkbox is checked/unchecked
+                         
                         },
                       ),
                       const Text(
@@ -106,10 +104,7 @@ class AddressPage extends StatelessWidget {
             // Action to add a new address
           },
           backgroundColor: Colors.black,
-          child: const Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
+          child: Image.asset("assets/pluusicon.png"),
         ),
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Assignment extends StatelessWidget {
-  Assignment({super.key});
+class AssignmentSubmit extends StatelessWidget {
+  AssignmentSubmit({super.key});
 
   final List assignmment = [
     {"name": "Assignment 1", "details": "Basic Of Science Ch 1.pdf"},
@@ -11,7 +11,7 @@ class Assignment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.green,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         backgroundColor: const Color(0xff182243),
@@ -27,23 +27,22 @@ class Assignment extends StatelessWidget {
         toolbarHeight: 139,
       ),
       body: Column(
-        //mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(25.0),
             child: SizedBox(
               width: 350,
               height: 56,
-              //color: Colors.white,
               child: Row(
+                //^^^^^^^^^^^^^^^^^^^^^^^^^^START BUTTON ROW
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   OutlinedButton(
                     onPressed: () {},
                     style: OutlinedButton.styleFrom(
-                      side: const BorderSide(color: Colors.black, width: 2),
+                      side: const BorderSide(color: Colors.black, width: 1),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 15),
@@ -61,9 +60,9 @@ class Assignment extends StatelessWidget {
                   OutlinedButton(
                     onPressed: () {},
                     style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: Colors.black, width: 2),
+                        side: const BorderSide(color: Colors.black, width: 1),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
+                            borderRadius: BorderRadius.circular(10)),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 15),
                         backgroundColor: const Color(0xff182243)),
@@ -78,6 +77,7 @@ class Assignment extends StatelessWidget {
                   ),
                 ],
               ),
+              //$$$$$$$$$$$$$$$$$$$$$$$END BOTTOM ROW
             ),
           ),
           Expanded(
@@ -97,7 +97,7 @@ class Assignment extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.3), // Shadow color
                           spreadRadius: 5, // Spread radius
                           blurRadius: 7, // Blur radius
-                          offset: const Offset(0, 3), // Offset of the shadow
+                          offset: const Offset(0, 5), // Offset of the shadow
                         ),
                       ],
                     ),
@@ -115,6 +115,7 @@ class Assignment extends StatelessWidget {
                                   style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 20,
+                                      fontFamily: "inter",
                                       fontWeight: FontWeight.w500),
                                 ),
                                 const SizedBox(
@@ -125,6 +126,7 @@ class Assignment extends StatelessWidget {
                                   style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 20,
+                                      fontFamily: "inter",
                                       fontWeight: FontWeight.w500),
                                 ),
                               ]),

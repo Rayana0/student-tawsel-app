@@ -42,19 +42,23 @@ class Settings extends StatelessWidget {
         toolbarHeight: 139,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(9.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
             Expanded(
+                //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ S E T T I N G S L I S T
                 child: ListView.builder(
                     itemCount: settingsTable.length,
                     itemBuilder: (context, index) {
                       return ListTile(
                         leading: CircleAvatar(
-                          backgroundColor: const Color(0xff182243),
-                          child: Image.asset(icon[index]),
-                        ),
-                        //Image.asset(icon[index]),
+                            backgroundColor: const Color(0xff182243),
+                            child: ClipOval(
+                              child: Image.asset(
+                                icon[index],
+                                fit: BoxFit.cover,
+                              ),
+                            )),
                         title: Text(
                           settingsTable[index],
                         ),

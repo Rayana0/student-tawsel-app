@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:student_tawsel_app/addaddress.dart';
-
+import 'package:student_tawsel_app/pages/home_student.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // ignore: prefer_const_constructors
-      home: Addaddress(),
+      home: HomeStudent(),
     );
   }
 }

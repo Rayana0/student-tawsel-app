@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Mohsettings extends StatelessWidget {
-  Mohsettings({super.key});
+class MyProfile extends StatelessWidget {
+  MyProfile({super.key});
 
   final List mohsettingsTable = [
     "Address",
@@ -64,6 +64,7 @@ class Mohsettings extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
+                //$$$$$$$$$$$$$$$$$$$$$$$$$$$ L I S T M Y P R O F I L E
                 child: ListView.builder(
               itemCount: mohsettingsTable.length,
               itemBuilder: (context, index) {
