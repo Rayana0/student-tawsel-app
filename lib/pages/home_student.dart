@@ -72,12 +72,6 @@ class HomeStudent extends StatelessWidget {
             ),
           ],
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Image.asset("assets/icon _settings.png"),
-          )
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -113,10 +107,9 @@ class HomeStudent extends StatelessWidget {
                       },
                       child: const Text("View all",
                           style: TextStyle(
-                            color: Color(0xff182243),
-                            fontSize: 12,
-                            decoration: TextDecoration.underline
-                          ))),
+                              color: Color(0xff182243),
+                              fontSize: 12,
+                              decoration: TextDecoration.underline))),
                 ],
               ),
             ),
